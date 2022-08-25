@@ -11,8 +11,8 @@ const {
 
 module.exports = {
   data: new SlashCommandBuilder()
-    .setName(`user`)
-    .setDescription(`Welcome yourself by providing information about yourself!`),
+    .setName(`modal`)
+    .setDescription(`Modal collectors template:)`),
   /**
    *
    * @param {ChatInputCommandInteraction} interaction
