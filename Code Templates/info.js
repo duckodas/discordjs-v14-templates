@@ -20,39 +20,21 @@ module.exports = {
    */
   async execute(interaction, client) {
     const fields = {
-      age: new TextInputBuilder()
-        .setCustomId(`age`)
-        .setLabel(`What is your age?`)
+      randominfo: new TextInputBuilder()
+        .setCustomId(`random-info`)
+        .setLabel(`What you want to say?`)
         .setStyle(TextInputStyle.Short)
         .setRequired(true)
         .setMaxLength(2)
         .setMinLength(1)
-        .setPlaceholder(`90 years young`),
-      name: new TextInputBuilder()
-        .setCustomId(`name`)
-        .setLabel(`What is your name?`)
-        .setStyle(TextInputStyle.Short)
-        .setRequired(true)
-        .setMaxLength(40)
-        .setMinLength(2)
-        .setPlaceholder(`John Doe`),
-      hobby: new TextInputBuilder()
-        .setCustomId(`hobby`)
-        .setLabel(`What is your hobby?`)
-        .setStyle(TextInputStyle.Paragraph)
-        .setRequired(true)
-        .setMaxLength(250)
-        .setMinLength(10)
-        .setPlaceholder(`I play football and games!`),
+        .setPlaceholder(`I hate cats`),
     };
 
     const modal = new ModalBuilder()
       .setCustomId(`not-required-for-this`)
       .setTitle(`Provide some information about yourself!`)
       .setComponents(
-        new ActionRowBuilder().setComponents(fields.age),
-        new ActionRowBuilder().setComponents(fields.name),
-        new ActionRowBuilder().setComponents(fields.hobby)
+        new ActionRowBuilder().setComponents(fields.randominfo)
       );
 
     await interaction.showModal(modal);
@@ -67,11 +49,9 @@ module.exports = {
         return null;
       });
     if (submitted) {
-      const age = submitted.fields.getTextInputValue("age");
-      const name = submitted.fields.getTextInputValue("name");
-      const hobby = submitted.fields.getTextInputValue("hobby");
+      const randominfo = submitted.fields.getTextInputValue("random-info");
       await submitted.reply({
-        content: `Hello i am **${name}**, I am **${age}** years old! Other information about me - **${hobby}**`,
+        content: `${randominfo} <3`,
       });
     }
   },
