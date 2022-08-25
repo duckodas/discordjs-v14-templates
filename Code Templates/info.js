@@ -25,14 +25,14 @@ module.exports = {
         .setLabel(`What you want to say?`)
         .setStyle(TextInputStyle.Short)
         .setRequired(true)
-        .setMaxLength(2)
-        .setMinLength(1)
+        .setMaxLength(250)
+        .setMinLength(5)
         .setPlaceholder(`I hate cats`),
     };
 
     const modal = new ModalBuilder()
       .setCustomId(`not-required-for-this`)
-      .setTitle(`Provide some information about yourself!`)
+      .setTitle(`Post some weird information`)
       .setComponents(
         new ActionRowBuilder().setComponents(fields.randominfo)
       );
