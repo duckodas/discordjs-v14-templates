@@ -4,6 +4,7 @@
 ```
 npm install discord.js@latest
 npm install chalk@4.1.0 (Not required but recommended)
+v14 eventHandler
 ```
 
 ```js
