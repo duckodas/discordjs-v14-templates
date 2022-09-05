@@ -5,3 +5,18 @@
 npm install discord.js@latest
 npm install chalk@4.1.0 (Not required but recommended)
 ```
+
+```js
+const { MongoDB } = require("../../Structures/config.json");
+const { connect } = require("mongoose");
+
+module.exports = {
+  name: "ready",
+  once: true,
+  async execute(client) {
+    connect(MongoDB).then(() => {
+      console.log(`Mongoose Connected`);
+    });
+  },
+};
+```
