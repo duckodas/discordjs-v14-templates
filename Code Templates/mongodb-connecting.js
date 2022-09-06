@@ -1,9 +1,12 @@
 Requirements:
+
 ```
 npm i mongoose
 npm i discord.js@v14.3.0
 ```
 
+## Code:
+```
 const { MongoDB } = require("MongoDB URL");
 const { connect } = require("mongoose");
 
@@ -16,3 +19,4 @@ module.exports = {
     });
   },
 };
+```
