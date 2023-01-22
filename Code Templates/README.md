@@ -8,7 +8,7 @@ v14 eventHandler
 ```
 
 ```js
-const { MongoDB } = require("../../Structures/config.json");
+const { MongoDB } = require("Your MongoDB URL");
 const { connect } = require("mongoose");
 
 module.exports = {
